@@ -2,8 +2,8 @@ from django.db import models
 import datetime
 
 
-class paciente(models.Model):
-    rut_paciente = models.CharField(max_length=12)
+class usuario(models.Model):
+    rut = models.CharField(max_length=12)
     nombres = models.CharField(max_length=20)
     apellido_pat = models.CharField(max_length=10)
     apellido_mat = models.CharField(max_length=10)
@@ -24,8 +24,8 @@ class examenes(models.Model):
     def __str__(self):
         return self.descripcion
 
-class agenda(models.Model):
-    rut_paciente = models.ForeignKey('paciente', on_delete=models.CASCADE)
+class servicios(models.Model):
+    rut = models.ForeignKey('usuario', on_delete=models.CASCADE)
     codiexamen = models.ForeignKey('examenes', on_delete=models.CASCADE)
     fecha = models.DateField(default=datetime.datetime.now())
     hora = models.TimeField(auto_now=False)

@@ -1,10 +1,10 @@
 from django import forms
 
-from .models import paciente, examenes, agenda
+from .models import usuario, examenes, servicios
 
 class pacienteForm(forms.ModelForm):
     class Meta:
-        model = paciente
+        model = usuario
         fields = '__all__'
 
 class examenesForm(forms.ModelForm):
@@ -14,6 +14,6 @@ class examenesForm(forms.ModelForm):
         
 class agendaForm(forms.ModelForm):
     class Meta:
-        model = agenda
+        model = servicios
         fields = '__all__'
         

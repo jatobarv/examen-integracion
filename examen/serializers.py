@@ -1,11 +1,11 @@
 from rest_framework import serializers
-from .models import paciente, agenda, examenes
+from .models import usuario, servicios, examenes
 
 
 class pacienteSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = paciente
+        model = usuario
         fields = '__all__'
 
 class examenesSerializer(serializers.ModelSerializer):
@@ -17,6 +17,6 @@ class examenesSerializer(serializers.ModelSerializer):
 class agendaSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = agenda
+        model = servicios
         fields = '__all__'
 
